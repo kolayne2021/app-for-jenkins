@@ -7,7 +7,7 @@
 # Made by Nikolay Prokopenko 2023
 #---------------------------------------------------------------------
 
-name: My github actions-basics
+name: My-github-actions-basics
 #Global vars
 env:
   APPLICATION_NAME    : "MyFlask"
