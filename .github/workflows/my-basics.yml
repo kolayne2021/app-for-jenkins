@@ -17,12 +17,13 @@ jobs:
   my-testing:
     runs-on: ubuntu-latest
     steps:
-    - name: Print Hello
+    - name: Print Hello Message in Testing
       run: echo "Hello world from testing job!"
 
   my-deploy:
     runs-on: ubuntu-latest
+    needs: [my-testing]
     steps:
-    - name: Print Hello
+    - name: Print Hello Message in Deploy
       run: echo "Hello world from deploy job!"
 
