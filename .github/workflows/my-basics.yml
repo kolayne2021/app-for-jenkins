@@ -8,7 +8,10 @@
 #---------------------------------------------------------------------
 
 name: My github actions-basics
-
+#Global vars
+env:
+  APPLICATION_NAME    : "MyFlask"
+  DEPLOY_PACKAGE_NAME : "flask-deploy-ver-${{ github.sha }}" # github.sha - github VAR
 on:
   push:
     branches:
@@ -19,11 +22,17 @@ jobs:
     steps:
     - name: Print Hello Message in Testing
       run: echo "Hello world from testing job!"
-
+    - name: Execute few commands
+      run: |
+        echo "Hello message 1"
+        echo "Hello message 2"
+        echo "Application name is ${{ env.APPLICATION_NAME}}
   my-deploy:
     runs-on: ubuntu-latest
     needs: [my-testing]
     steps:
     - name: Print Hello Message in Deploy
       run: echo "Hello world from deploy job!"
+    - name: Printing deploymeny package
+      run: echo "Deploy package name is ${{ env.DEPLOY_PACKAGE_NAME }}
 
