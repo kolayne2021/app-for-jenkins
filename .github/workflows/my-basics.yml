@@ -4,6 +4,25 @@
 # Version      Date        Info
 # 1.0          2019        Initial Version
 #
-# Made by Nickolay Prokopenko 2023
+# Made by Nikolay Prokopenko 2023
 #---------------------------------------------------------------------
+
+name: My github actions-basics
+
+on:
+  push:
+    branches:
+    - master
+jobs:
+  my-testing:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print Hello
+      run: echo "Hello world from testing job!"
+
+  my-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print Hello
+      run: echo "Hello world from deploy job!"
 
